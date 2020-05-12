@@ -65,7 +65,7 @@ Stop the demo through `docker-compose`:
 
 ## Errata
 
-We use Elastic Filebeat to pick up logs from the docker container. This may require you to run docker as root in order to access `/var/run/docker.sock`. In that case you may need to run `sudo docker-compose up -d` to run the demo. 
+We use Elastic Filebeat to pick up logs from the docker container. This may require you to run docker as root in order to access `/var/run/docker.sock`. In that case you may need to run `sudo docker-compose up -d` to run the demo.
 
 If you have docker in a non-standard location, we may need to find a different root directory. If Filebeat still isn't picking up logs, you can try running: `DOCKER_LIB_CONTAINERS=$(docker info -f '{{.DockerRootDir}}')/containers && sudo DOCKER_LIB_CONTAINERS=${DOCKER_LIB_CONTAINERS} docker-compose up -d`.
 # Metrics Demo
@@ -78,4 +78,3 @@ This scenario adds support for metrics use cases to the LogStream demo. We open 
 |----------------------------|--------------------------------------------------------------------------------------------------------|----------|-----------|
 | Cribl                      | http://localhost:9000                                                                                  | admin    | cribldemo |
 | Grafana                    | http://localhost:8200                                                                                  | admin    | cribldemo |
-
